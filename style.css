@@ -1,0 +1,266 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+:root {
+  /*Secondary Colors*/
+  --Dark-Text: hsl(229, 25%, 31%);
+  --Score-Text: hsl(229, 64%, 46%);
+  --Header-Outline: hsl(217, 16%, 45%);
+}
+
+body {
+  background: radial-gradient(#1f3756, #141539);
+}
+
+.mobile-main {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  height: 100vh;
+}
+.game-title {
+  display: flex;
+  justify-content: space-between;
+  width: 35vw;
+  height: 7em;
+  align-items: center;
+  font-weight: 700;
+  border: 2px solid #606e85ff;
+  border-radius: 10px;
+  padding: 10px;
+}
+.mini-title {
+  width: 100px;
+}
+.mini-title img {
+  width: 6em;
+  padding-top: 6px;
+}
+.score {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 23px;
+  border-radius: 5px;
+}
+.sco {
+  color: #2a46c0;
+  font-size: 14px;
+}
+
+.cou {
+  color: #3b4363;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.tria > img {
+  color: #141539;
+  width: 14em;
+}
+
+.rules-sec {
+  display: flex;
+  align-items: center;
+  gap: 5em;
+}
+.rules-menu,
+.restart-game {
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  padding: 10px 10px;
+  width: 100px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.rules-menu:hover,
+.restart-game:hover {
+  background-color: #fff;
+  color: #141539;
+  transform: scale(1.1);
+}
+
+.rock,
+.paper,
+.scissors {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+  transform: scale(1.1);
+}
+
+.game-icones {
+  position: relative;
+}
+
+.rock {
+  bottom: -4px;
+  left: 56px;
+}
+
+.paper {
+  top: -40px;
+  left: -26px;
+}
+
+.scissors {
+  top: -40px;
+  left: 145px;
+}
+.rock-choice,
+.paper-choice,
+.scissors-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7em;
+  height: 7em;
+  border-radius: 100%;
+}
+.rock-choice {
+  background: linear-gradient(#dc2e4eff, #dd405dff);
+  box-shadow: inset 0px -4px 2px #822435;
+}
+.paper-choice {
+  background: linear-gradient(#4865f4ff, #5671f5ff);
+  box-shadow: inset 0px -4px 2px #3246a7;
+}
+.scissors-choice {
+  background: linear-gradient(#ec9e0eff, #eca922ff);
+  box-shadow: inset 0px -4px 2px #a06b00;
+}
+.game-start {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 8em;
+  width: 100%;
+}
+.player-choise,
+.house-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7em;
+  height: 7em;
+  border-radius: 100%;
+}
+.house-wait {
+  display: flex;
+  width: 7em;
+  height: 7em;
+  border-radius: 100%;
+  background-color: #092446;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+.player-pick {
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+.player-container,
+.house-container {
+  display: grid;
+  justify-items: center;
+  gap: 1em;
+  letter-spacing: 1px;
+}
+
+.scissors-wrap,
+.rock-wrap,
+.paper-wrap,
+.player-wrap,
+.house-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5.8em;
+  height: 5.8em;
+  border-radius: 100%;
+  background-color: #fff;
+  box-shadow: inset 0px 4px 2px lightgray;
+}
+.house-wrap {
+  visibility: hidden;
+}
+.rule-container {
+  /* display: flex; */
+  background-color: #24242557;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.rule-pop,
+.score-pop {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+.score-pop {
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: none;
+}
+.rule-img {
+  width: 15em;
+}
+.rule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.rule-header img {
+  height: 1em;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.rule-header img:hover {
+  transform: scale(1.1);
+}
+
+.rule-header p {
+  font-size: 20px;
+  font-weight: 700;
+  color: #141539;
+}

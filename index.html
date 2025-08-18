@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <!--Mobile design-->
+    <section class="mobile-main">
+      <section class="game-title">
+        <div class="mini-title">
+          <img src="images/logo.svg" alt="rock" />
+        </div>
+        <div class="score">
+          <span class="sco">SCORE</span>
+          <span class="cou">0</span>
+        </div>
+      </section>
+      <section class="game-icones">
+        <div class="tria">
+          <img src="images/bg-triangle.svg" alt="triangle" />
+        </div>
+        <div class="single-icon paper paper-choice">
+          <div class="paper-wrap">
+            <img src="images/icon-paper.svg" class="paper-icon" alt="paper" />
+          </div>
+        </div>
+        <div class="single-icon scissors scissors-choice">
+          <div class="scissors-wrap">
+            <img
+              src="images/icon-scissors.svg"
+              class="scissors-icon"
+              alt="scissors"
+            />
+          </div>
+        </div>
+        <div class="single-icon rock rock-choice">
+          <div class="rock-wrap">
+            <img src="images/icon-rock.svg" class="rock-icon" alt="rock" />
+          </div>
+        </div>
+      </section>
+      <section class="game-start">
+        <div class="player-container">
+          <div class="player-choice">
+            <div class="player-wrap"></div>
+          </div>
+          <p class="player-pick">YOU PICKED</p>
+        </div>
+        <div class="house-container">
+          <div class="house-choice house-wait">
+            <div class="house-wrap"></div>
+          </div>
+          <p class="player-pick">THE HOUSE PICKED</p>
+        </div>
+      </section>
+      <section class="rules-sec">
+        <div class="rules-menu">RULES</div>
+        <div class="restart-game">RESTART</div>
+      </section>
+      <section class="rule-container">
+        <div class="rule-pop">
+          <div class="rule-header">
+            <p>RULES</p>
+            <img src="images/icon-close.svg" alt="close" class="close-popup" />
+          </div>
+
+          <img src="images/image-rules.svg" alt="rules" class="rule-img" />
+        </div>
+      </section>
+      <section class="score-pop pulse"></section>
+    </section>
+
+    <!--End Mobile Design-->
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Abde Bourhim</a>.
+    </div> -->
+    <script src="app.js" defer></script>
+  </body>
+</html>
