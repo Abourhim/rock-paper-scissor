@@ -1,7 +1,4 @@
 //variables
-// const paper = document.querySelector(".paper");
-// const rock = document.querySelector(".rock");
-// const scissors = document.querySelector(".scissors");
 const ruleSection = document.querySelector(".rules-sec");
 const ruleContainer = document.querySelector(".rule-container");
 const closePopup = document.querySelector(".close-popup");
@@ -15,6 +12,7 @@ const houseChoise = document.querySelector(".house-choice");
 const playerWrap = document.querySelector(".player-wrap");
 const houseWrap = document.querySelector(".house-wrap");
 const scorePop = document.querySelector(".score-pop");
+const playAgain = document.querySelector(".replay");
 
 //Restart game
 restartGame.addEventListener("click", () => {
@@ -22,20 +20,16 @@ restartGame.addEventListener("click", () => {
 });
 
 //Showing up rules on click
-const ruleShow = () => {
-  ruleSection.addEventListener("click", () => {
-    ruleContainer.style.display = "flex";
-  });
-  closePopup.addEventListener("click", () => {
-    ruleContainer.style.display = "none";
-  });
-};
-
-ruleShow();
+ruleSection.querySelector("div").addEventListener("click", () => {
+  ruleContainer.style.display = "flex";
+});
+closePopup.addEventListener("click", () => {
+  ruleContainer.style.display = "none";
+});
 
 //Choose a card, hide the others and start the game
 let handPicked = false;
-let handClasses = ["paper", "rock", "scissors"];
+const handClasses = ["paper", "rock", "scissors"];
 let iconsHandIndex = Math.floor(Math.random() * handClasses.length);
 let houseChoiseClass = `${handClasses[iconsHandIndex]}` + "-choice";
 // let playerChoiseScissors = playerChoise.classList.contains("scissors-choice");
@@ -84,9 +78,10 @@ gameArr.forEach((icon) => {
 
     //House pick random hand
     if (handPicked) {
-      setInterval(() => {
+      setTimeout(() => {
+        houseChoise.classList.remove("pulse");
         scorePop.style.display = "block";
-
+        playAgain.style.display = "block";
         createIconHouse(handClasses[iconsHandIndex]);
         // console.log(handClasses[iconsHandIndex]);
         if (playerChoise.classList.contains(houseChoiseClass)) {
@@ -101,7 +96,7 @@ gameArr.forEach((icon) => {
         ) {
           scoreCount++;
           scoreUpdate();
-          scorePop.innerHTML = "Congrats you WON this round :)" + scoreCount;
+          scorePop.innerHTML = "Congrats you WON this round :)";
           // console.log("Congrats you scored: " + scoreCount);
         } else {
           scoreCount--;
@@ -114,10 +109,10 @@ gameArr.forEach((icon) => {
   });
 });
 
-//Counting score based on selection and rules
-//score goes up every time player win
-//Score go down till 0 every time player lose
-//Score doesn't change if it's draw
-//scissors beats paper    A
-//paper beats rock        B
-//rock beats scissors     C
+//Play Again with saving score
+playAgain.addEventListener("click", () => {
+  gameIcons.style.display = "block";
+  gameStart.style.display = "none";
+  scorePop.style.display = "none";
+  playAgain.style.display = "none";
+});
