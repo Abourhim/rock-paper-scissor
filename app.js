@@ -30,29 +30,25 @@ closePopup.addEventListener("click", () => {
 //Choose a card, hide the others and start the game
 let handPicked = false;
 const handClasses = ["paper", "rock", "scissors"];
-let iconsHandIndex = Math.floor(Math.random() * handClasses.length);
-let houseChoiseClass = `${handClasses[iconsHandIndex]}` + "-choice";
-// let playerChoiseScissors = playerChoise.classList.contains("scissors-choice");
-// let playerChoisePaper = playerChoise.classList.contains("paper-choice");
-// let playerChoiseRock = playerChoise.classList.contains("rock-choice");
+
 let scissors = "scissors-choice";
 let paper = "paper-choice";
 let rock = "rock-choice";
 let scoreCount = 0;
-
 const createIcon = (item) => {
-  let img = document.createElement("img");
-  img.src = `images/icon-${item}.svg`;
+  playerWrap.innerHTML += `<img src="images/icon-${item}.svg" />`;
   playerChoise.classList.add(`${item}-choice`);
-  playerWrap.appendChild(img);
 };
 
 const createIconHouse = (item) => {
-  let img = document.createElement("img");
-  img.src = `images/icon-${item}.svg`;
+  houseWrap.innerHTML += `<img src="images/icon-${item}.svg" />`;
   houseChoise.classList.add(`${item}-choice`);
-  houseWrap.appendChild(img);
   houseWrap.style.visibility = "visible";
+};
+
+const removeClass = () => {
+  playerChoise.className = "player-choice";
+  houseChoise.className = "house-choice house-wait";
 };
 
 const scoreUpdate = () => {
@@ -79,6 +75,9 @@ gameArr.forEach((icon) => {
     //House pick random hand
     if (handPicked) {
       setTimeout(() => {
+        let iconsHandIndex = Math.floor(Math.random() * handClasses.length);
+        let houseChoiseClass = `${handClasses[iconsHandIndex]}` + "-choice";
+
         houseChoise.classList.remove("pulse");
         scorePop.style.display = "block";
         playAgain.style.display = "block";
@@ -115,4 +114,8 @@ playAgain.addEventListener("click", () => {
   gameStart.style.display = "none";
   scorePop.style.display = "none";
   playAgain.style.display = "none";
+  houseWrap.style.visibility = "hidden";
+  houseWrap.innerHTML = "";
+  playerWrap.innerHTML = "";
+  removeClass();
 });
