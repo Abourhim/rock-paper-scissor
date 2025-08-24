@@ -36,12 +36,12 @@ let paper = "paper-choice";
 let rock = "rock-choice";
 let scoreCount = 0;
 const createIcon = (item) => {
-  playerWrap.innerHTML += `<img src="images/icon-${item}.svg" />`;
+  playerWrap.innerHTML = `<img src="images/icon-${item}.svg" />`;
   playerChoise.classList.add(`${item}-choice`);
 };
 
 const createIconHouse = (item) => {
-  houseWrap.innerHTML += `<img src="images/icon-${item}.svg" />`;
+  houseWrap.innerHTML = `<img src="images/icon-${item}.svg" />`;
   houseChoise.classList.add(`${item}-choice`);
   houseWrap.style.visibility = "visible";
 };
